@@ -13,24 +13,27 @@ body{
 #Huge{
     font-family: Arial, Helvetica, sans-serif;
     color: gray;
-    font-size: 300px;
+    font-size: 10rem;
     position: fixed ;
     width: 97%;
     z-index: -1;
-    margin-top: 10px;
+    margin-top: 10rem;
+    height: 100%;
 }
 #taskbar{
     transition-duration: 500ms;
     background-color: white;
     opacity: 0.1;
     border-radius: 40px;
-    width: 500px;
-    margin: auto;
-    padding-left: 0px;
+    width:370px;
+    left: 50%;
+    margin-left: -185px;
     padding-inline-start: 0px;
     position: fixed;
-    left: 50%;
-    margin-left: -250px ;
+    display: flex; 
+    justify-content: center;
+    align-items: center;;
+
 }
 #taskbar:hover{
     transition-duration: 500ms ;
@@ -38,7 +41,8 @@ body{
 }
 #lin{
     display: inline-block;
-    margin:10px;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
 #link{
@@ -55,54 +59,47 @@ body{
     color: orangered;
     text-decoration: underline;
 }
-
+#imgUp{
+    width:100%;
+    height: 400px;
+    border-radius: 20px 20px 0px 0px ;
+    margin: 0%;
+}
 #container{
     background-color: white;
     border-radius: 20px;
     margin: auto;
-    width: 60%;
+    width: 100%;
+    min-height: 300px;
+    max-height: 400px;
     margin-bottom: 200px;
     font-size: 100%;
     color: black;
     font-size: medium;
+    overflow-y: scroll;
 }
-.containerB div:nth-child(3){
-    background-image: url("byc2.jpg");
+#container:last-child{
     background-color: #cccccc;
-    height: 500px; /* You must set a specified height */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-    background-position: center; /* Center the image */
+    background: url("wallpaperflare.com_wallpaper\ \(5\).jpg") no-repeat center center/cover;
+    margin-bottom: 500px;
 }
-#container3{
-    background-color: white;
-    border-radius: 20px;
-    margin: auto;
-    width: 60%;
-    height: 900px;
-    margin-bottom: 200px;
-    font-size: 100%;
-    color: white;
-    font-size: medium;
-    background-image: url("wallpaperflare.com_wallpaper\ \(5\).jpg");
-    background-color: #cccccc;
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-    background-position: center; /* Center the image */
-}
+
 #container p{
     margin: 10px;
     text-align: left;
 }
-#imgUp{
-    width:100%;
-    height: 103%;
-    border-radius: 20px 20px 0px 0px ;
-    padding: 0%;
-    margin: 0%;
-}
-/* #imageBg{
-    width: 100%;
-    height: 100%;
 
-} */
+
+
+@media only screen and (min-width: 768px){
+    #container{
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 1500px){
+    #container{
+        height: 700px;
+        max-height: 800px;
+        width: 60%;
+    }
+}
