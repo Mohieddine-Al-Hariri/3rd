@@ -9,21 +9,26 @@ body{
     text-align: center;  
     background-position: fixed;
     content: "Huge Title" ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
 }
 #Huge{
     font-family: Arial, Helvetica, sans-serif;
     color: gray;
-    font-size: 10rem;
-    position: fixed ;
-    width: 97%;
+    position: fixed;
     z-index: -1;
-    margin-top: 10rem;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 9rem;
+    width: auto;
 }
 #taskbar{
     transition-duration: 500ms;
-    background-color: white;
-    opacity: 0.1;
+    background-color: black;
+    opacity: 0.5;
     border-radius: 40px;
     width:370px;
     left: 50%;
@@ -32,13 +37,15 @@ body{
     position: fixed;
     display: flex; 
     justify-content: center;
-    align-items: center;;
+    align-items: center;
+    z-index: 2;
 
 }
 #taskbar:hover{
     transition-duration: 500ms ;
     opacity: 1;
 }
+
 #lin{
     display: inline-block;
     margin-top:10px;
@@ -54,10 +61,11 @@ body{
     font-size: 20px;
     margin: 10px;
     text-transform: uppercase; 
+    color: white;
 }
 #link:hover{
     color: orangered;
-    text-decoration: underline;
+    text-decoration: none;;
 }
 #imgUp{
     width:100%;
@@ -77,6 +85,13 @@ body{
     color: black;
     font-size: medium;
     overflow-y: scroll;
+    opacity: 0;
+    transition: 1s;
+
+}
+#container.show{
+    opacity: 1;
+    transition: 1s;
 }
 #container:last-child{
     background-color: #cccccc;
@@ -96,10 +111,39 @@ body{
         font-size: 20px;
     }
 }
+@media only screen and (min-width: 1000px){
+    #container{width: 90%;}
+}
 @media only screen and (min-width: 1500px){
     #container{
         height: 700px;
         max-height: 800px;
         width: 60%;
     }
+    #huge{
+        font-size: 15rem;
+    }
+}
+
+::-webkit-scrollbar{
+    width: 20px;
+    background: transparent;
+    border-top-right-radius: 100vw;
+    border-bottom-right-radius: 100vw;
+}
+::-webkit-scrollbar-track{
+    background-color: rgb(155, 154, 154);
+    opacity:0.3;
+    border-radius: 100vw;
+    margin-block: .5em;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgba(90, 89, 89,.7);
+    border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(77, 77, 77, 0.9);
+}
+#container::-webkit-scrollbar{
+    background-color: white;
 }
